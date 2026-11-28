@@ -12,5 +12,10 @@ def listar():
         print(f"{livro['titulo']} ({livro['ano']}), de {livro['autor']}")
 
 
+def buscar_por_autor(autor):
+    termo = autor.casefold()
+    return [livro for livro in LIVROS if termo in livro["autor"].casefold()]
+
+
 if __name__ == "__main__":
     listar()
